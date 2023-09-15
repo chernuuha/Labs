@@ -1,0 +1,52 @@
+class Personality
+{
+    public string tg_id = "@chxrnxha";
+    public int sum = 1800;
+    public string address = "г.Домодедово (Московская обл.), ул. Курыжова 19 кв. 44";
+    public string product = "Headphones JBL";
+
+    public Personality(string tg_id)
+    {
+        this.tg_id = tg_id;
+    }
+    public Personality(string tg_id, int sum) : this(tg_id)
+    {
+        this.sum = sum;
+    }
+    public Personality(string tg_id, int sum, string address) : this(tg_id, sum)
+    {
+        this.address = address;
+    }
+
+    public Personality(string tg_id, int sum, string address, string product) : this(tg_id, sum, address)
+    {
+        this.product = product;
+    }
+    public void PersonalityInf()
+    {
+        Console.WriteLine("ТГ id: " + this.tg_id);
+        Console.WriteLine("Адрес: " + this.address);
+        Console.WriteLine("Сумма заказа: " + this.sum);
+        Console.WriteLine("Товар: " + this.product);
+    }
+}
+
+
+class Programm
+{
+    static void Main()
+    {
+        Personality person_1 = new Personality ("@chxrnxha", 2200, "г.Москва Дмитровское шоссе, 102Ас3, кв. 55", "Redbull 24 шт.");
+        Personality person_2 = new Personality ("@gotem", 2500, "г.Москва Дмитровское шоссе, 105, кв. 24", "New Balance <<577>>");
+        Personality person_3 = new Personality("@nolif", 15000, "г.Москва Дмитровское шоссе, 122, кв. 77", "Adidas <<Campus>> (Blue)");
+        Personality person_4 = new Personality("@starkiller", 2500, "г.Химки (Московская обл.), ул. Энгельса, 10/21");
+
+
+        person_1.PersonalityInf();
+        person_2.PersonalityInf();
+        person_3.PersonalityInf();
+        person_4.PersonalityInf();
+
+        Console.ReadLine();
+    }
+}
